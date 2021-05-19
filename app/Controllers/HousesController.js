@@ -1,4 +1,4 @@
-import { ProxyState } from "../AppState";
+import { ProxyState } from "../AppState.js";
 //import { caesService }
 
 export class HousesController {
@@ -7,7 +7,6 @@ export class HousesController {
         this.drawHouses()
     }
     drawHouses() {
-        debugger
         let template = ''
         ProxyState.houses.forEach(house => {
             template += /*html*/`
@@ -18,14 +17,24 @@ export class HousesController {
                     </div>
                     <div class="card-body">
                         <p>
-                        <b>${house.sFootage} ${house.inNeighborhood ? "in a nice neighborhood" : ""}></b>
+                        <b>${house.sFootage} ${house.inNeighborhood ? "in a nice neighborhood" : ""}</b>
                         </p>
                          <p>
-                        <b>${house.askPrice}</b>
+                        <b>Asking price: ${house.askPrice}</b>
                         </p>
                     </div >
                 </div >
             </div> `
         })
+        document.getElementById('listings').innerHTML = template
     }
+
+    addHouse(formData) {
+        console.log("data from Form: ", formData)
+    }
+
+    toggleForm() {
+        document.getElementById('house-form').classList.toggle('d-none')
+    }
+
 }
