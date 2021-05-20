@@ -3,7 +3,6 @@ import { House } from "../Models/House.js";
 
 class HouseService {
     addHouse(fd) {
-        debugger
         let newHouse = new House(fd.sqFootage,
             fd.neighborhood,
             fd.yearBuilt,
