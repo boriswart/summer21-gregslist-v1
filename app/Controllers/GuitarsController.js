@@ -1,5 +1,5 @@
 import { ProxyState } from "../AppState.js"
-//import { GuitarsService } from "../Services/GuitarServices.js"
+import { guitarsService } from "../Services/GuitarsService.js"
 
 export class GuitarsController {
     constructor() {
@@ -35,7 +35,7 @@ export class GuitarsController {
         console.log(event)
         let form = event.target
         let formData = {
-            make: form.make.value,
+            make: form.maker.value,
             type: form.type.value,
             model: form.model.value,
             cost: form.cost.value,
@@ -44,8 +44,8 @@ export class GuitarsController {
         }
         //Guitar("Fender", "Electric", "Stratocaster", 867.00, 1987, "//Placehold.it/600x600/"
         console.log("data from Form: ", formData)
-        //guitarsService.addGuitar(formData)
-        //form.reset()
+        guitarsService.addGuitar(formData)
+        form.reset()
         this.toggleForm()
     }
 

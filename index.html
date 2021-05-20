@@ -48,6 +48,7 @@
                     <button class="fab" onclick="app.housesController.toggleForm()">+</button>
                 </div>
                 <div class="col-lg-8 m-auto">
+                    <!--   car-form -->
                     <form class="card p-3 shadow d-none" id="car-form" onsubmit="app.carsController.addCar(event)">
                         <div class="form-group">
                             <label for="make" class="sr-only">Make:</label>
@@ -76,11 +77,7 @@
                         <button type="submit">submit form</button>
                     </form>
 
-
-
-
-
-
+                    <!--  house-form  -->
                     <form class="card p-3 shadow d-none" id="house-form"
                         onsubmit="app.housesController.addHouse(event)">
                         <div class="form-group">
@@ -126,9 +123,37 @@
                             <input placeholder="price" type="number" id="askPrice" />
                         </div>
                         <button type="submit">submit form</button>
+                    </form>
 
 
-
+                    <!-- guitar-form  -->
+                    <form class="card p-3 shadow d-none" id="guitar-form"
+                        onsubmit="app.guitarsController.addGuitar(event)">
+                        <div class="form-group">
+                            <label for="maker" class="sr-only">Maker:</label>
+                            <input class="form-control" placeholder="Maker" type="text" id="maker" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="Model" class="sr-only">Model:</label>
+                            <input class="form-control" type="text" placeholder="Model" id="model" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="type" class="sr-only">Type:</label>
+                            <input class="form-control" type="text" placeholder="Type" id="type" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="type" class="sr-only">Year:</label>
+                            <input class="form-control" type="text" placeholder="Year" id="year" />
+                        </div>
+                        <div class="form-group">
+                            <label for="price" class="sr-only">Price:</label>
+                            <input class="form-control" placeholder="price" type="number" min="0" id="cost" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="img" class="sr-only">img:</label>
+                            <input class="form-control" placeholder="img" type="text" id="img" />
+                        </div>
+                        <button type="submit">submit form</button>
                     </form>
                 </div>
             </div>
