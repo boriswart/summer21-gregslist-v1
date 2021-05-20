@@ -1,5 +1,5 @@
 import { ProxyState } from "../AppState.js";
-//import { caesService }
+import { housesService } from "../Services/HouseService.js"
 
 export class HousesController {
     constructor() {
@@ -17,7 +17,7 @@ export class HousesController {
                     </div>
                     <div class="card-body">
                         <p>
-                        <b>${house.sFootage} ${house.inNeighborhood ? "in a nice neighborhood" : ""}</b>
+                        <b>${house.sqFootage} ${house.neighborhood ? "in a nice neighborhood" : ""}</b>
                         </p>
                          <p>
                         <b>Asking price: ${house.askPrice}</b>
@@ -27,10 +27,30 @@ export class HousesController {
             </div> `
         })
         document.getElementById('listings').innerHTML = template
+        template = `<button  class="fab" onclick="app.housesController.toggleForm()">+</button>`
+        document.getElementById('fab').innerHTML = template
     }
 
-    addHouse(formData) {
+    addHouse(event) {
+        event.preventDefault()
+        console.log(event)
+        let form = event.target
+        let formData = {
+            sqFootage: form.sqFootage.value,
+            color: form.color.value,
+            img: form.img.value,
+            neighborhood: form.neighborhood.value,
+            HOA: form.HOA.value,
+            numBaths: form.numBaths.value,
+            numBeds: form.numBeds.value,
+            yearBuilt: form.yearBuilt.value,
+            distFromSchool: form.distFromSchool.value,
+            askPrice: form.askPrice.value
+        }
         console.log("data from Form: ", formData)
+        housesService.addHouse(formData)
+        //form.reset()
+        this.toggleForm()
     }
 
     toggleForm() {

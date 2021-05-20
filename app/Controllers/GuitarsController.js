@@ -20,13 +20,15 @@ export class GuitarsController {
                         <b>${guitar.maker} ${guitar.model}</b>
                         </p>
                          <p>
-                        <b>Price: ${guitar.cost}</b>
-                        </p>
-                    </div >
-                </div >
-            </div>  `
+                         <b>Price: ${guitar.cost}</b>
+                         </p>
+                         </div >
+                         </div >
+                         </div>  `
         })
         document.getElementById('listings').innerHTML = template
+        template = `<button  class="fab" onclick="app.guitarsController.toggleForm()">+</button>`
+        document.getElementById('fab').innerHTML = template
     }
     addGuitar(event) {
         event.preventDefault()

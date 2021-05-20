@@ -18,16 +18,18 @@ export class CarsController {
                     <div class="card-body">
                         <p>
                             <b>${car.make} ${car.model}</b>
-                        </p>
-                        <p>
+                            </p>
+                            <p>
                             <em>${car.price}</em>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            `
+                            </p>
+                            </div>
+                            </div>
+                            </div>
+                            `
         })
         document.getElementById('listings').innerHTML = template
+        template = `<button  class="fab" onclick="app.carsController.toggleForm()">+</button>`
+        document.getElementById('fab').innerHTML = template
     }
 
     addCar(event) {
