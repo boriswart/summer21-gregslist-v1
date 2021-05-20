@@ -1,24 +1,24 @@
 export class House {
     constructor(
         sqFootage,
-        inNeighborhood,
+        neighborhood,
         yearBuilt,
         color,
         numBaths,
-        numBRooms,
+        numBeds,
         HOA,
         distFromSchool,
         askPrice,
         img
     ) {
-        this.sFootage = sqFootage;
-        this.inNeighborhood = inNeighborhood;
+        this.sqFootage = sqFootage;
+        this.neighborhood = neighborhood;
         this.yearBuilt = yearBuilt;
         this.color = color;
         this.numBaths = numBaths;
-        this.numBRooms = numBRooms;
+        this.numBeds = numBeds;
         this.HOA = HOA;
-        this.disFromSchool = distFromSchool;
+        this.distFromSchool = distFromSchool;
         this.askPrice = askPrice;
         this.img = img;
     }
