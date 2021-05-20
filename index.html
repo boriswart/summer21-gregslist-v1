@@ -28,10 +28,14 @@
                     <button class="btn btn-primary btn-block" onclick="app.carsController.drawCars()">Cars</button>
                 </div>
                 <div class="col-2">
-                    <button class="btn btn-primary btn-block">Houses</button>
+                    <button class="btn btn-primary btn-block"
+                        onclick="app.housesController.drawHouses()">Houses</button>
                 </div>
-                <!-- <div class="col-2"><button class="btn btn-info">Missed Connections Soooon</button></div>
-                <div class="col-2"><button class="btn btn-info"></button></div>
+                <div class="col-2">
+                    <button class="btn btn-primary btn-block"
+                        onclick="app.guitarsController.drawGuitars()">Guitars</button>
+                </div>
+                <!-- <div class="col-2"><button class="btn btn-info"></button></div>
                 <div class="col-2"><button class="btn btn-info"></button></div>
                 <div class="col-2"><button class="btn btn-info"></button></div> -->
             </div>
@@ -40,8 +44,8 @@
             </div>
 
             <div class="row mb-5">
-                <div class="col-12">
-                    <button class="fab" onclick="app.carsController.toggleForm()">+</button>
+                <div id="fab" class="col-12">
+                    <button class="fab" onclick="app.housesController.toggleForm()">+</button>
                 </div>
                 <div class="col-lg-8 m-auto">
                     <form class="card p-3 shadow d-none" id="car-form" onsubmit="app.carsController.addCar(event)">
@@ -71,9 +75,61 @@
                         </div>
                         <button type="submit">submit form</button>
                     </form>
-                    <!-- <form onsubmit="app.housesController.addHouse(event)">
-                        TODO that you not me
-                    </form> -->
+
+
+
+
+
+
+                    <form class="card p-3 shadow d-none" id="house-form"
+                        onsubmit="app.housesController.addHouse(event)">
+                        <div class="form-group">
+                            <label for="sqFootage" class="sr-only"></label>
+                            <input class="form-control" placeholder="Feet sq" type="number" id="sqFootage" required />
+                        </div>
+                        <div class="d-flex space-between">
+                            <span>
+                                <input type="checkbox" id="neighborhood" name="neighborhood">
+                                <label for="neighborhood">Neighborhood</label>
+                            </span>
+                            <span>
+                                <input type="checkbox" id="HOA" name="HOA">
+                                <label for="HOA">HOA</label>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="img" class="sr-only"></label>
+                            <input class="form-control" placeholder="URL" type="text" id="img" />
+                        </div>
+                        <div class="form-group">
+                            <label for="color" class="sr-only"></label>
+                            <input class="form-control" placeholder="color" type="text" id="color" />
+                        </div>
+                        <div class="form-group">
+                            <label for="numBaths" class="sr-only">Bathrooms:</label>
+                            <input class="form-control" placeholder="Baths" type="number" id="numBaths" />
+                        </div>
+                        <div class="form-group">
+                            <label for="numBeds" class="sr-only">NumBrooms:</label>
+                            <input class="form-control" placeholder="beds" type="number" id="numBeds" />
+                        </div>
+                        <div class="form-group">
+                            <label for="yearBuilt" class="sr-only">Year Built:</label>
+                            <input class="form-control" placeholder="year built" type="number" id="yearBuilt" />
+                        </div>
+                        <div class="form-group">
+                            <label for="distFromSchool" class="sr-only">Dx-School:</label>
+                            <input class="form-control" placeholder="Dx miles" type="number" id="distFromSchool" />
+                        </div>
+                        <div class="form-group">
+                            <label for="askPrice" class="sr-only">Price:</label>
+                            <input placeholder="price" type="number" id="askPrice" />
+                        </div>
+                        <button type="submit">submit form</button>
+
+
+
+                    </form>
                 </div>
             </div>
 
@@ -87,7 +143,12 @@
             </div>
         </div>
     </footer>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
     <script src="app/main.js" type="module"></script>
 </body>
 
